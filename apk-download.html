@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Ledger APK - Download</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 500px;
+            width: 100%;
+            overflow: hidden;
+            animation: slideUp 0.5s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+        }
+        
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 50px;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .download-options {
+            margin-bottom: 25px;
+        }
+        
+        .option {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .option:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+        }
+        
+        .option-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .option-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        
+        .option-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .option-desc {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        
+        .btn-secondary:hover {
+            background: #f8f9fa;
+        }
+        
+        .steps {
+            background: #fff9e6;
+            border: 1px solid #ffd700;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        
+        .steps h3 {
+            color: #856404;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .steps ol {
+            margin-left: 20px;
+            color: #856404;
+            font-size: 13px;
+        }
+        
+        .steps li {
+            margin: 5px 0;
+        }
+        
+        .code {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 10px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        
+        .info {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px 0;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 20px;
+        }
+        
+        .info-item {
+            text-align: center;
+        }
+        
+        .info-value {
+            font-size: 18px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        
+        .info-label {
+            font-size: 11px;
+            color: #999;
+            margin-top: 5px;
+        }
+        
+        .success-msg {
+            background: #d4edda;
+            border: 1px solid #28a745;
+            color: #155724;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="app-icon">💰</div>
+            <h1>Financial Ledger</h1>
+            <p>මූල්‍ය පොත - APK Download</p>
+        </div>
+        
+        <div class="content">
+            <div class="download-options">
+                <!-- Quick Build Option -->
+                <div class="option">
+                    <div class="option-header">
+                        <span class="option-icon">🚀</span>
+                        <span class="option-title">ඉක්මන් APK Build</span>
+                    </div>
+                    <p class="option-desc">
+                        Expo EAS භාවිතා කර cloud එකේ APK build කරන්න. 
+                        Android SDK install කිරීම අවශ්‍ය නැහැ.
+                    </p>
+                    <div class="code">
+npx eas-cli
+eas login
+eas build --platform android --profile preview</div>
+                    <a href="https://expo.dev/signup" target="_blank" class="btn btn-primary">
+                        Expo Account හදන්න
+                    </a>
+                </div>
+                
+                <!-- Download Source Option -->
+                <div class="option">
+                    <div class="option-header">
+                        <span class="option-icon">📦</span>
+                        <span class="option-title">Source Code & Build</span>
+                    </div>
+                    <p class="option-desc">
+                        Source code download කර ඔබගේ computer එකේ APK build කරන්න.
+                    </p>
+                    <a href="/workspace/FinancialLedger.tar.gz" download class="btn btn-secondary">
+                        Download Source (865 KB)
+                    </a>
+                </div>
+            </div>
+            
+            <div class="steps">
+                <h3>📱 APK Build කරන සරල ක්‍රමය:</h3>
+                <ol>
+                    <li>Source code download කර extract කරන්න</li>
+                    <li>Terminal එකේ: <code>cd FinancialLedger</code></li>
+                    <li>Run: <code>npm install</code></li>
+                    <li>Run: <code>./build-apk.sh</code></li>
+                    <li>Instructions follow කර APK build කරන්න</li>
+                </ol>
+            </div>
+            
+            <div class="success-msg">
+                ✅ Build script එක automatic විදිහට best method එක suggest කරනවා!
+            </div>
+            
+            <div class="info">
+                <div class="info-item">
+                    <div class="info-value">1.0.0</div>
+                    <div class="info-label">VERSION</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-value">~30MB</div>
+                    <div class="info-label">APK SIZE</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-value">5.0+</div>
+                    <div class="info-label">ANDROID</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Auto-download helper script
+        function startBuild() {
+            const commands = [
+                'curl -o FinancialLedger.tar.gz http://localhost:8080/FinancialLedger.tar.gz',
+                'tar -xzf FinancialLedger.tar.gz',
+                'cd FinancialLedger',
+                'npm install',
+                './build-apk.sh'
+            ];
+            
+            const commandStr = commands.join(' && ');
+            
+            // Copy to clipboard
+            navigator.clipboard.writeText(commandStr).then(() => {
+                alert('Build commands copied to clipboard! Paste in terminal to start.');
+            });
+        }
+    </script>
+</body>
+</html>
