@@ -1,0 +1,9 @@
+
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1024" height="1024" fill="#1e3a8a" rx="150"/>
+    <circle cx="512" cy="400" r="180" fill="none" stroke="white" stroke-width="20"/>
+    <text x="512" y="420" font-family="Arial, sans-serif" font-size="120" font-weight="bold" fill="white" text-anchor="middle">රු</text>
+    <rect x="200" y="600" width="624" height="80" fill="white" rx="40"/>
+    <rect x="200" y="720" width="424" height="60" fill="white" rx="30"/>
+    <rect x="200" y="820" width="524" height="60" fill="white" rx="30"/>
+</svg>

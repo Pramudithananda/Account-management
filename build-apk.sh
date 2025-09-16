@@ -1,0 +1,173 @@
+#!/bin/bash
+
+echo "🏗️  Building Budget Tracker APK..."
+echo "📱 App Name: මුදල් කළමනාකරණ (Budget Tracker)"
+echo ""
+
+# Create build directory
+mkdir -p build
+
+# Export the app for production
+echo "📦 Exporting Expo app..."
+npx expo export --platform android --output-dir build/export
+
+# Create a simple HTML wrapper for web testing
+echo "🌐 Creating web build..."
+cat > build/index.html << 'EOF'
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>මුදල් කළමනාකරණ - Budget Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f3f4f6;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            background: #1e3a8a;
+            border-radius: 25px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+        }
+        .title {
+            font-size: 28px;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .download-section {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .download-btn {
+            background: #1e3a8a;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+        }
+        .download-btn:hover {
+            background: #1e40af;
+        }
+        .features {
+            text-align: left;
+            margin: 20px 0;
+        }
+        .features h3 {
+            color: #1e3a8a;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .feature-list li:before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .note {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #92400e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="app-icon">රු</div>
+        <h1 class="title">මුදල් කළමනාකරණ</h1>
+        <p class="subtitle">Budget Tracker App</p>
+        
+        <div class="download-section">
+            <h2>📱 Download APK</h2>
+            <p>ඔබගේ Android phone එකට මෙම app එක install කරගන්න</p>
+            <a href="budget-tracker.apk" class="download-btn" download>
+                📥 APK Download කරන්න
+            </a>
+            <div class="note">
+                <strong>සටහන:</strong> APK install කරන්න කලින් "Unknown Sources" enable කරන්න Settings > Security වල
+            </div>
+        </div>
+
+        <div class="features">
+            <h3>🌟 Features</h3>
+            <ul class="feature-list">
+                <li>බැංකු ශේෂය සහ මුදල් ශේෂය track කරන්න</li>
+                <li>වියදම් කාණ්ඩ අනුව budget කරන්න</li>
+                <li>Progress bars වලින් spending track කරන්න</li>
+                <li>Transaction history බලන්න</li>
+                <li>සම්පූර්ණයෙන්ම Sinhala භාෂාවෙන්</li>
+                <li>Simple සහ user-friendly interface</li>
+            </ul>
+        </div>
+
+        <div class="features">
+            <h3>📋 How to Use</h3>
+            <ul class="feature-list">
+                <li>ප්‍රථමයෙන් බැංකුවෙන් cash ලබාගන්න</li>
+                <li>Cash වලින් categories වලට වියදම් කරන්න</li>
+                <li>Progress bars වලින් ඔබගේ spending monitor කරන්න</li>
+                <li>Transaction history වලින් records check කරන්න</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+EOF
+
+echo "✅ Build completed!"
+echo ""
+echo "📂 Build files created in: ./build/"
+echo "🌐 Open build/index.html in browser to see the download page"
+echo ""
+echo "📱 To create actual APK:"
+echo "   1. Install Android Studio"
+echo "   2. Set up Android SDK"
+echo "   3. Run: npx expo build:android"
+echo ""
+echo "🔗 Or use EAS Build (requires Expo account):"
+echo "   1. npx eas login"
+echo "   2. npx eas build --platform android --profile preview"
+echo ""
