@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Codes - Budget Tracker APK</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            min-height: 100vh;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .title {
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        .qr-section {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 20px 0;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .qr-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .qr-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            background: white;
+            margin: 0 auto 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+        .qr-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .qr-link {
+            font-size: 12px;
+            opacity: 0.8;
+            word-break: break-all;
+            margin-bottom: 15px;
+        }
+        .copy-btn {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 5px;
+        }
+        .copy-btn:hover {
+            background: #059669;
+        }
+        .instructions {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            text-align: left;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .instructions h3 {
+            color: #fbbf24;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .note {
+            background: rgba(251, 191, 36, 0.2);
+            border: 1px solid rgba(251, 191, 36, 0.5);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            color: #fbbf24;
+            font-size: 14px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">📱 Budget Tracker APK</h1>
+        <p class="subtitle">QR Codes for Easy Download</p>
+        
+        <div class="qr-section">
+            <h2>📱 Scan QR Codes to Download</h2>
+            <p>Phone camera එකෙන් scan කරලා instant download කරගන්න</p>
+            
+            <div class="qr-container">
+                <div class="qr-card">
+                    <div class="qr-title">🔥 Direct APK Download</div>
+                    <div class="qr-code" id="qr-apk">Loading...</div>
+                    <div class="qr-link">https://bashupload.com/pl7iR/W-aLk.html</div>
+                    <button class="copy-btn" onclick="copyLink('https://bashupload.com/pl7iR/W-aLk.html')">Copy Link</button>
+                    <button class="copy-btn" onclick="openLink('https://bashupload.com/pl7iR/W-aLk.html')">Open Link</button>
+                </div>
+                
+                <div class="qr-card">
+                    <div class="qr-title">🌐 Download Page</div>
+                    <div class="qr-code" id="qr-page">Loading...</div>
+                    <div class="qr-link">https://bashupload.com/xIfEX/index.html</div>
+                    <button class="copy-btn" onclick="copyLink('https://bashupload.com/xIfEX/index.html')">Copy Link</button>
+                    <button class="copy-btn" onclick="openLink('https://bashupload.com/xIfEX/index.html')">Open Link</button>
+                </div>
+                
+                <div class="qr-card">
+                    <div class="qr-title">📦 Complete Package</div>
+                    <div class="qr-code" id="qr-zip">Loading...</div>
+                    <div class="qr-link">https://bashupload.com/0at8t/WUQG0.zip</div>
+                    <button class="copy-btn" onclick="copyLink('https://bashupload.com/0at8t/WUQG0.zip')">Copy Link</button>
+                    <button class="copy-btn" onclick="openLink('https://bashupload.com/0at8t/WUQG0.zip')">Open Link</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>📱 How to Use QR Codes</h3>
+            <ol>
+                <li><strong>Open Camera:</strong> Phone එකේ camera app එක open කරන්න</li>
+                <li><strong>Point at QR:</strong> QR code එකට camera point කරන්න</li>
+                <li><strong>Tap Notification:</strong> Screen එකේ appear වෙන notification එක tap කරන්න</li>
+                <li><strong>Download:</strong> Link එක open වෙලා file download වෙයි</li>
+                <li><strong>Install:</strong> Chrome browser එකේ file එක open කරලා "Install App" click කරන්න</li>
+            </ol>
+            
+            <div class="note">
+                <strong>💡 Pro Tip:</strong> 
+                Direct APK QR code එක scan කරන්න instant download වලට. 
+                Download page QR code එක instructions සහිතව download කරගන්න වලට.
+            </div>
+        </div>
+        
+        <div class="qr-section">
+            <h3>🔗 Quick Share Text</h3>
+            <div style="background: rgba(0,0,0,0.2); padding: 20px; border-radius: 10px; text-align: left; font-family: monospace;">
+                <div id="share-text">
+🎉 Budget Tracker APK Ready!<br><br>
+📱 Direct Download:<br>
+https://bashupload.com/pl7iR/W-aLk.html<br><br>
+🌐 Download Page:<br>
+https://bashupload.com/xIfEX/index.html<br><br>
+Installation:<br>
+1. Click link → Download<br>
+2. Open in Chrome<br>
+3. Install App<br>
+4. Enjoy! 🎉
+                </div>
+            </div>
+            <button class="copy-btn" onclick="copyShareText()" style="margin-top: 15px;">Copy Share Text</button>
+        </div>
+    </div>
+    
+    <script>
+        // Generate QR codes
+        window.onload = function() {
+            // Direct APK QR
+            QRCode.toCanvas(document.getElementById('qr-apk'), 'https://bashupload.com/pl7iR/W-aLk.html', {
+                width: 200,
+                margin: 2,
+                color: {
+                    dark: '#1e3a8a',
+                    light: '#ffffff'
+                }
+            });
+            
+            // Download page QR  
+            QRCode.toCanvas(document.getElementById('qr-page'), 'https://bashupload.com/xIfEX/index.html', {
+                width: 200,
+                margin: 2,
+                color: {
+                    dark: '#1e3a8a',
+                    light: '#ffffff'
+                }
+            });
+            
+            // ZIP package QR
+            QRCode.toCanvas(document.getElementById('qr-zip'), 'https://bashupload.com/0at8t/WUQG0.zip', {
+                width: 200,
+                margin: 2,
+                color: {
+                    dark: '#1e3a8a',
+                    light: '#ffffff'
+                }
+            });
+        };
+        
+        function copyLink(link) {
+            navigator.clipboard.writeText(link).then(function() {
+                alert('✅ Link copied to clipboard!');
+            });
+        }
+        
+        function openLink(link) {
+            window.open(link, '_blank');
+        }
+        
+        function copyShareText() {
+            const shareText = `🎉 Budget Tracker APK Ready!
+
+📱 Direct Download:
+https://bashupload.com/pl7iR/W-aLk.html
+
+🌐 Download Page:
+https://bashupload.com/xIfEX/index.html
+
+Installation:
+1. Click link → Download
+2. Open in Chrome
+3. Install App  
+4. Enjoy! 🎉`;
+            
+            navigator.clipboard.writeText(shareText).then(function() {
+                alert('✅ Share text copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html>

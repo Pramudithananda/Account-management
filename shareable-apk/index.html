@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>මුදල් කළමනාකරණ - APK Download</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            min-height: 100vh;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .app-icon {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e3a8a;
+            font-size: 40px;
+            font-weight: bold;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        .title {
+            font-size: 28px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        .download-section {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .download-btn {
+            background: white;
+            color: #1e3a8a;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .feature {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .feature-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+        .feature-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .feature-desc {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        .instructions {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .instructions h3 {
+            color: #fbbf24;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 18px;
+        }
+        .instructions ol {
+            line-height: 1.6;
+            padding-left: 20px;
+        }
+        .note {
+            background: rgba(251, 191, 36, 0.2);
+            border: 1px solid rgba(251, 191, 36, 0.5);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            color: #fbbf24;
+            font-size: 14px;
+        }
+        .app-preview {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .preview-frame {
+            width: 100%;
+            max-width: 300px;
+            height: 500px;
+            border: 3px solid #374151;
+            border-radius: 20px;
+            margin: 0 auto;
+            overflow: hidden;
+            background: white;
+        }
+        .hidden-app {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="app-icon">රු</div>
+        <h1 class="title">මුදල් කළමනාකරණ</h1>
+        <p class="subtitle">Budget Tracker APK - Free Download</p>
+        
+        <div class="download-section">
+            <h2>📱 Download APK</h2>
+            <p>ඔබගේ Android phone එකට install කරගන්න</p>
+            
+            <button class="download-btn" onclick="downloadAPK()">
+                📥 Download APK File
+            </button>
+            
+            <button class="download-btn" onclick="tryApp()">
+                🚀 Try App Now
+            </button>
+            
+            <div class="note">
+                <strong>📋 How to Install:</strong><br>
+                1. Download button click කරන්න<br>
+                2. File එක phone එකේ save කරන්න<br>
+                3. Chrome browser එකේ open කරන්න<br>
+                4. "Install App" click කරන්න
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">📱</div>
+                <div class="feature-title">Native Experience</div>
+                <div class="feature-desc">App එක වගේ work කරනවා</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <div class="feature-title">Offline Support</div>
+                <div class="feature-desc">Internet නැතුව use කරන්න පුළුවන්</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🌍</div>
+                <div class="feature-title">Sinhala Language</div>
+                <div class="feature-desc">සම්පූර්ණ Sinhala UI</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <div class="feature-title">Budget Tracking</div>
+                <div class="feature-desc">Complete money management</div>
+            </div>
+        </div>
+        
+        <div class="app-preview">
+            <h3>📱 App Preview</h3>
+            <div class="preview-frame">
+                <iframe id="app-frame" src="about:blank" style="width: 100%; height: 100%; border: none;"></iframe>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>🔧 Installation Guide</h3>
+            <ol>
+                <li><strong>Download:</strong> "Download APK File" click කරන්න</li>
+                <li><strong>Save:</strong> Phone එකේ Downloads folder එකේ save වෙයි</li>
+                <li><strong>Open:</strong> Chrome browser එකේ file එක open කරන්න</li>
+                <li><strong>Install:</strong> "Install App" button එක click කරන්න</li>
+                <li><strong>Done:</strong> Home screen එකේ app icon එක appear වෙයි!</li>
+            </ol>
+            
+            <div class="note">
+                <strong>💡 Tip:</strong> 
+                Chrome browser use කරන්න best results වලට. Firefox වලත් work කරනවා.
+                App එක install කරගත්ත පසු offline වෙලාත් පිරිසිදු විදිහට work කරනවා!
+            </div>
+        </div>
+    </div>
+    
+    <!-- Hidden app content -->
+    <div class="hidden-app" id="hidden-app">
+        
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-title">මුදල් කළමනාකරණ</div>
+            <div>💰</div>
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            <!-- Balance Cards -->
+            <div class="balance-container">
+                <div class="balance-card bank-card">
+                    <div class="balance-label">බැංකු ශේෂය</div>
+                    <div class="balance-amount" id="bank-balance">රු 50,000</div>
+                </div>
+                <div class="balance-card cash-card">
+                    <div class="balance-label">මුදල් ශේෂය</div>
+                    <div class="balance-amount" id="cash-balance">රු 0</div>
+                </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="action-button income-button" onclick="openModal('income')">
+                    ⬇️ මුදල් ලබාගැනීම
+                </button>
+                <button class="action-button expense-button" onclick="openModal('expense')">
+                    ⬆️ වියදම් කරන්න
+                </button>
+            </div>
+            
+            <!-- Categories -->
+            <div>
+                <div class="section-title">වියදම් කාණ්ඩ</div>
+                <div id="categories-container">
+                    <!-- Categories will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Transactions -->
+            <div>
+                <div class="section-title">මෑත ගනුදෙනු</div>
+                <div id="transactions-container">
+                    <!-- Transactions will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal -->
+    <div id="transaction-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="modal-title">ගනුදෙනුව</div>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            
+            <input type="number" class="input" id="amount-input" placeholder="මුදල (රු)">
+            <input type="text" class="input" id="description-input" placeholder="විස්තරය (අමතර)">
+            
+            <div id="category-selector" class="category-selector hidden">
+                <div style="margin-bottom: 8px; font-weight: 500;">කාණ්ඩය තෝරන්න:</div>
+                <div id="category-options">
+                    <!-- Category options will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <button class="submit-button" id="submit-btn" onclick="addTransaction()">
+                සේව් කරන්න
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        // App State
+        let bankBalance = 50000;
+        let cashBalance = 0;
+        let categories = [
+            { id: 1, name: 'පෑන් මිලදී ගැනීම්', balance: 0, target: 10000, spent: 0, unitPrice: 100 },
+            { id: 2, name: 'කෑම', balance: 0, target: 15000, spent: 0, unitPrice: 200 },
+            { id: 3, name: 'ප්‍රවාහන', balance: 0, target: 8000, spent: 0, unitPrice: 50 }
+        ];
+        let transactions = [];
+        let currentTransactionType = '';
+        let selectedCategory = null;
+        
+        // Load data from localStorage
+        function loadData() {
+            const saved = localStorage.getItem('budgetTrackerData');
+            if (saved) {
+                const data = JSON.parse(saved);
+                bankBalance = data.bankBalance || 50000;
+                cashBalance = data.cashBalance || 0;
+                categories = data.categories || categories;
+                transactions = data.transactions || [];
+            }
+        }
+        
+        // Save data to localStorage
+        function saveData() {
+            const data = {
+                bankBalance,
+                cashBalance,
+                categories,
+                transactions
+            };
+            localStorage.setItem('budgetTrackerData', JSON.stringify(data));
+        }
+        
+        // Format currency
+        function formatCurrency(amount) {
+            return `රු ${amount.toLocaleString('si-LK')}`;
+        }
+        
+        // Update UI
+        function updateUI() {
+            document.getElementById('bank-balance').textContent = formatCurrency(bankBalance);
+            document.getElementById('cash-balance').textContent = formatCurrency(cashBalance);
+            updateCategories();
+            updateTransactions();
+        }
+        
+        // Update categories display
+        function updateCategories() {
+            const container = document.getElementById('categories-container');
+            container.innerHTML = '';
+            
+            categories.forEach(category => {
+                const progressPercentage = category.target > 0 ? (category.spent / category.target) * 100 : 0;
+                
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'category-card';
+                categoryDiv.innerHTML = `
+                    <div class="category-header">
+                        <div class="category-name">${category.name}</div>
+                        <div class="category-balance">${formatCurrency(category.balance)}</div>
+                    </div>
+                    <div style="font-size: 14px; color: #6b7280; margin-bottom: 8px;">
+                        වියදම්: ${formatCurrency(category.spent)} / ${formatCurrency(category.target)}
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill ${progressPercentage > 100 ? 'progress-overflow' : ''}" 
+                             style="width: ${Math.min(progressPercentage, 100)}%"></div>
+                    </div>
+                    <div style="font-size: 12px; color: #6b7280; text-align: right; margin-top: 4px;">
+                        ${progressPercentage.toFixed(1)}%
+                    </div>
+                    <div style="font-size: 14px; color: #059669; font-weight: 500; margin-top: 8px;">
+                        ඉතිරි: ${formatCurrency(Math.max(0, category.target - category.spent))}
+                    </div>
+                `;
+                container.appendChild(categoryDiv);
+            });
+        }
+        
+        // Update transactions display
+        function updateTransactions() {
+            const container = document.getElementById('transactions-container');
+            container.innerHTML = '';
+            
+            const recentTransactions = transactions.slice(0, 10);
+            
+            if (recentTransactions.length === 0) {
+                container.innerHTML = '<div style="text-align: center; color: #6b7280; padding: 20px;">ගනුදෙනු නොමැත</div>';
+                return;
+            }
+            
+            recentTransactions.forEach(transaction => {
+                const transactionDiv = document.createElement('div');
+                transactionDiv.className = 'transaction-item';
+                
+                const icon = transaction.type === 'income' ? '⬇️' : '⬆️';
+                const amountClass = transaction.type === 'income' ? 'income-amount' : 'expense-amount';
+                const sign = transaction.type === 'income' ? '+' : '-';
+                
+                transactionDiv.innerHTML = `
+                    <div class="transaction-icon">${icon}</div>
+                    <div class="transaction-details">
+                        <div class="transaction-description">
+                            ${transaction.description || (transaction.type === 'income' ? 'මුදල් ලබාගැනීම' : transaction.category?.name)}
+                        </div>
+                        <div class="transaction-date">${transaction.date}</div>
+                    </div>
+                    <div class="transaction-amount ${amountClass}">
+                        ${sign}${formatCurrency(transaction.amount)}
+                    </div>
+                `;
+                container.appendChild(transactionDiv);
+            });
+        }
+        
+        // Open modal
+        function openModal(type) {
+            if (type === 'expense' && cashBalance <= 0) {
+                alert('ප්‍රථමයෙන් මුදල් ලබාගන්න');
+                return;
+            }
+            
+            currentTransactionType = type;
+            document.getElementById('modal-title').textContent = 
+                type === 'income' ? 'මුදල් ලබාගැනීම' : 'වියදම් කරන්න';
+            
+            // Show/hide category selector
+            const categorySelector = document.getElementById('category-selector');
+            if (type === 'expense') {
+                categorySelector.classList.remove('hidden');
+                updateCategoryOptions();
+            } else {
+                categorySelector.classList.add('hidden');
+            }
+            
+            document.getElementById('transaction-modal').classList.add('active');
+        }
+        
+        // Close modal
+        function closeModal() {
+            document.getElementById('transaction-modal').classList.remove('active');
+            document.getElementById('amount-input').value = '';
+            document.getElementById('description-input').value = '';
+            selectedCategory = null;
+            updateCategoryOptions();
+        }
+        
+        // Update category options
+        function updateCategoryOptions() {
+            const container = document.getElementById('category-options');
+            container.innerHTML = '';
+            
+            categories.forEach(category => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = `category-option ${selectedCategory?.id === category.id ? 'selected' : ''}`;
+                optionDiv.textContent = category.name;
+                optionDiv.onclick = () => {
+                    selectedCategory = category;
+                    updateCategoryOptions();
+                };
+                container.appendChild(optionDiv);
+            });
+        }
+        
+        // Add transaction
+        function addTransaction() {
+            const amount = parseFloat(document.getElementById('amount-input').value);
+            const description = document.getElementById('description-input').value;
+            
+            if (!amount || amount <= 0) {
+                alert('වලංගු මුදලක් ඇතුළත් කරන්න');
+                return;
+            }
+            
+            if (currentTransactionType === 'expense') {
+                if (!selectedCategory) {
+                    alert('කාණ්ඩයක් තෝරන්න');
+                    return;
+                }
+                if (amount > cashBalance) {
+                    alert('ප්‍රමාණවත් මුදල් නොමැත');
+                    return;
+                }
+            }
+            
+            const transaction = {
+                id: Date.now(),
+                type: currentTransactionType,
+                amount: amount,
+                category: selectedCategory,
+                description: description,
+                date: new Date().toLocaleString('si-LK'),
+                timestamp: Date.now()
+            };
+            
+            if (currentTransactionType === 'income') {
+                bankBalance -= amount;
+                cashBalance += amount;
+            } else {
+                cashBalance -= amount;
+                const categoryIndex = categories.findIndex(cat => cat.id === selectedCategory.id);
+                if (categoryIndex !== -1) {
+                    categories[categoryIndex].balance += amount;
+                    categories[categoryIndex].spent += amount;
+                }
+            }
+            
+            transactions.unshift(transaction);
+            saveData();
+            updateUI();
+            closeModal();
+        }
+        
+        // Initialize app
+        loadData();
+        updateUI();
+        
+        // Handle back button
+        window.addEventListener('popstate', function(event) {
+            if (document.getElementById('transaction-modal').classList.contains('active')) {
+                closeModal();
+                event.preventDefault();
+            }
+        });
+        
+        // Install prompt
+        let deferredPrompt;
+        let installPromptShown = false;
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            if (!installPromptShown) {
+                showInstallPrompt();
+                installPromptShown = true;
+            }
+        });
+        
+        function showInstallPrompt() {
+            const promptDiv = document.createElement('div');
+            promptDiv.id = 'install-prompt';
+            promptDiv.style.cssText = `
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                right: 20px;
+                background: #fef3c7;
+                border: 2px solid #f59e0b;
+                border-radius: 12px;
+                padding: 16px;
+                text-align: center;
+                color: #92400e;
+                z-index: 10000;
+                font-weight: bold;
+            `;
+            promptDiv.innerHTML = `
+                <div style="margin-bottom: 10px;">📱 මෙම app එක ඔබගේ home screen එකට add කරගන්න!</div>
+                <button onclick="installApp()" style="background: #f59e0b; color: white; border: none; padding: 8px 16px; border-radius: 6px; margin: 5px; font-weight: bold; cursor: pointer;">Install App</button>
+                <button onclick="hideInstallPrompt()" style="background: #6b7280; color: white; border: none; padding: 8px 16px; border-radius: 6px; margin: 5px; font-weight: bold; cursor: pointer;">Later</button>
+            `;
+            document.body.insertBefore(promptDiv, document.body.firstChild);
+        }
+        
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                        hideInstallPrompt();
+                    }
+                    deferredPrompt = null;
+                });
+            } else {
+                alert('කරුණාකර browser menu එකෙන් "Add to Home Screen" select කරන්න');
+            }
+        }
+        
+        function hideInstallPrompt() {
+            const prompt = document.getElementById('install-prompt');
+            if (prompt) {
+                prompt.remove();
+            }
+        }
+        
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+
+    </div>
+    
+    <script>
+        function downloadAPK() {
+            // Get the app content
+            const appContent = `<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1e3a8a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>මුදල් කළමනාකරණ - Budget Tracker</title>
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoi4La44LeU4Lav4La94LeKIOC2muC3heC2uOC2seC3j+C2muC2u+C2qyIsInNob3J0X25hbWUiOiJCdWRnZXQgVHJhY2tlciIsImRlc2NyaXB0aW9uIjoiUGVyc29uYWwgYnVkZ2V0IHRyYWNraW5nIGFwcCBpbiBTaW5oYWxhIiwic3RhcnRfdXJsIjoiLi8iLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsImJhY2tncm91bmRfY29sb3IiOiIjMWUzYThhIiwidGhlbWVfY29sb3IiOiIjMWUzYThhIiwib3JpZW50YXRpb24iOiJwb3J0cmFpdC1wcmltYXJ5IiwiaWNvbnMiOlt7InNyYyI6ImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjNhV1IwYUQwaU1Ua3lJaUJvWldsbmFIUTlJakU1TWlJZ2RtbGxkMEp2ZUQwaU1DQXdJREU1TWlBeE9USWlJSGh0Ykc1elBTSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHlNREF3TDNOMlp5SStQSEpsWTNRZ2QybGtkR2c5SWpFNU1pSWdhR1ZwWjJoMFBTSXhPVElpSUdacGJHdzlJaU14WlROaE9HRWlJSEo0UFNJek1DSXZQangwWlhoMElIZzlJamsySWlCNVBTSXhNakFpSUdadmJuUXRabUZ0YVd4NVBTSkJjbWxoYkNJZ1ptOXVkQzF6YVhwbFBTSTRNQ0lnWm05dWRDMTNaV2xuYUhROUltSnZiR1FpSUdacGJHdzlJbmRvYVhSbElpQjBaWGgwTFdGdVkyaHZjajBpYldsa1pHeGxJajdndHJEZ3RwQThMM1JsZUhRK1BDOXpkbWMrIiwic2l6ZXMiOiIxOTJ4MTkyIiwidHlwZSI6ImltYWdlL3N2Zyt4bWwifV19">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f3f4f6;
+            color: #374151;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background: white;
+            position: relative;
+        }
+        
+        .header {
+            background: #1e3a8a;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .content {
+            padding: 16px;
+        }
+        
+        .balance-container {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .balance-card {
+            flex: 1;
+            padding: 20px;
+            border-radius: 12px;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .bank-card { background: #3b82f6; }
+        .cash-card { background: #10b981; }
+        
+        .balance-label {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+        
+        .balance-amount {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        
+        .action-button {
+            flex: 1;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .income-button { background: #10b981; }
+        .expense-button { background: #ef4444; }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        
+        .category-card {
+            background: white;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .category-name {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .category-balance {
+            font-size: 16px;
+            font-weight: bold;
+            color: #10b981;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 8px 0 4px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        
+        .progress-overflow {
+            background: #ef4444;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: white;
+            margin: 20px;
+            border-radius: 16px;
+            padding: 20px;
+            width: 90%;
+            max-width: 400px;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .modal-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        .input {
+            width: 100%;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+        
+        .category-selector {
+            margin-bottom: 20px;
+        }
+        
+        .category-option {
+            padding: 12px;
+            border-radius: 8px;
+            background: #f9fafb;
+            margin-bottom: 8px;
+            border: 1px solid #e5e7eb;
+            cursor: pointer;
+        }
+        
+        .category-option.selected {
+            background: #dbeafe;
+            border-color: #3b82f6;
+        }
+        
+        .submit-button {
+            width: 100%;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .submit-button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+        
+        .transaction-item {
+            background: white;
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .transaction-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 16px;
+            background: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+        }
+        
+        .transaction-details {
+            flex: 1;
+        }
+        
+        .transaction-description {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .transaction-date {
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 2px;
+        }
+        
+        .transaction-amount {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .income-amount { color: #10b981; }
+        .expense-amount { color: #ef4444; }
+        
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-title">මුදල් කළමනාකරණ</div>
+            <div>💰</div>
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            <!-- Balance Cards -->
+            <div class="balance-container">
+                <div class="balance-card bank-card">
+                    <div class="balance-label">බැංකු ශේෂය</div>
+                    <div class="balance-amount" id="bank-balance">රු 50,000</div>
+                </div>
+                <div class="balance-card cash-card">
+                    <div class="balance-label">මුදල් ශේෂය</div>
+                    <div class="balance-amount" id="cash-balance">රු 0</div>
+                </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="action-button income-button" onclick="openModal('income')">
+                    ⬇️ මුදල් ලබාගැනීම
+                </button>
+                <button class="action-button expense-button" onclick="openModal('expense')">
+                    ⬆️ වියදම් කරන්න
+                </button>
+            </div>
+            
+            <!-- Categories -->
+            <div>
+                <div class="section-title">වියදම් කාණ්ඩ</div>
+                <div id="categories-container">
+                    <!-- Categories will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Transactions -->
+            <div>
+                <div class="section-title">මෑත ගනුදෙනු</div>
+                <div id="transactions-container">
+                    <!-- Transactions will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal -->
+    <div id="transaction-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="modal-title">ගනුදෙනුව</div>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            
+            <input type="number" class="input" id="amount-input" placeholder="මුදල (රු)">
+            <input type="text" class="input" id="description-input" placeholder="විස්තරය (අමතර)">
+            
+            <div id="category-selector" class="category-selector hidden">
+                <div style="margin-bottom: 8px; font-weight: 500;">කාණ්ඩය තෝරන්න:</div>
+                <div id="category-options">
+                    <!-- Category options will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <button class="submit-button" id="submit-btn" onclick="addTransaction()">
+                සේව් කරන්න
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        // App State
+        let bankBalance = 50000;
+        let cashBalance = 0;
+        let categories = [
+            { id: 1, name: 'පෑන් මිලදී ගැනීම්', balance: 0, target: 10000, spent: 0, unitPrice: 100 },
+            { id: 2, name: 'කෑම', balance: 0, target: 15000, spent: 0, unitPrice: 200 },
+            { id: 3, name: 'ප්‍රවාහන', balance: 0, target: 8000, spent: 0, unitPrice: 50 }
+        ];
+        let transactions = [];
+        let currentTransactionType = '';
+        let selectedCategory = null;
+        
+        // Load data from localStorage
+        function loadData() {
+            const saved = localStorage.getItem('budgetTrackerData');
+            if (saved) {
+                const data = JSON.parse(saved);
+                bankBalance = data.bankBalance || 50000;
+                cashBalance = data.cashBalance || 0;
+                categories = data.categories || categories;
+                transactions = data.transactions || [];
+            }
+        }
+        
+        // Save data to localStorage
+        function saveData() {
+            const data = {
+                bankBalance,
+                cashBalance,
+                categories,
+                transactions
+            };
+            localStorage.setItem('budgetTrackerData', JSON.stringify(data));
+        }
+        
+        // Format currency
+        function formatCurrency(amount) {
+            return \`රු \${amount.toLocaleString('si-LK')}\`;
+        }
+        
+        // Update UI
+        function updateUI() {
+            document.getElementById('bank-balance').textContent = formatCurrency(bankBalance);
+            document.getElementById('cash-balance').textContent = formatCurrency(cashBalance);
+            updateCategories();
+            updateTransactions();
+        }
+        
+        // Update categories display
+        function updateCategories() {
+            const container = document.getElementById('categories-container');
+            container.innerHTML = '';
+            
+            categories.forEach(category => {
+                const progressPercentage = category.target > 0 ? (category.spent / category.target) * 100 : 0;
+                
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'category-card';
+                categoryDiv.innerHTML = \`
+                    <div class="category-header">
+                        <div class="category-name">\${category.name}</div>
+                        <div class="category-balance">\${formatCurrency(category.balance)}</div>
+                    </div>
+                    <div style="font-size: 14px; color: #6b7280; margin-bottom: 8px;">
+                        වියදම්: \${formatCurrency(category.spent)} / \${formatCurrency(category.target)}
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill \${progressPercentage > 100 ? 'progress-overflow' : ''}" 
+                             style="width: \${Math.min(progressPercentage, 100)}%"></div>
+                    </div>
+                    <div style="font-size: 12px; color: #6b7280; text-align: right; margin-top: 4px;">
+                        \${progressPercentage.toFixed(1)}%
+                    </div>
+                    <div style="font-size: 14px; color: #059669; font-weight: 500; margin-top: 8px;">
+                        ඉතිරි: \${formatCurrency(Math.max(0, category.target - category.spent))}
+                    </div>
+                \`;
+                container.appendChild(categoryDiv);
+            });
+        }
+        
+        // Update transactions display
+        function updateTransactions() {
+            const container = document.getElementById('transactions-container');
+            container.innerHTML = '';
+            
+            const recentTransactions = transactions.slice(0, 10);
+            
+            if (recentTransactions.length === 0) {
+                container.innerHTML = '<div style="text-align: center; color: #6b7280; padding: 20px;">ගනුදෙනු නොමැත</div>';
+                return;
+            }
+            
+            recentTransactions.forEach(transaction => {
+                const transactionDiv = document.createElement('div');
+                transactionDiv.className = 'transaction-item';
+                
+                const icon = transaction.type === 'income' ? '⬇️' : '⬆️';
+                const amountClass = transaction.type === 'income' ? 'income-amount' : 'expense-amount';
+                const sign = transaction.type === 'income' ? '+' : '-';
+                
+                transactionDiv.innerHTML = \`
+                    <div class="transaction-icon">\${icon}</div>
+                    <div class="transaction-details">
+                        <div class="transaction-description">
+                            \${transaction.description || (transaction.type === 'income' ? 'මුදල් ලබාගැනීම' : transaction.category?.name)}
+                        </div>
+                        <div class="transaction-date">\${transaction.date}</div>
+                    </div>
+                    <div class="transaction-amount \${amountClass}">
+                        \${sign}\${formatCurrency(transaction.amount)}
+                    </div>
+                \`;
+                container.appendChild(transactionDiv);
+            });
+        }
+        
+        // Open modal
+        function openModal(type) {
+            if (type === 'expense' && cashBalance <= 0) {
+                alert('ප්‍රථමයෙන් මුදල් ලබාගන්න');
+                return;
+            }
+            
+            currentTransactionType = type;
+            document.getElementById('modal-title').textContent = 
+                type === 'income' ? 'මුදල් ලබාගැනීම' : 'වියදම් කරන්න';
+            
+            // Show/hide category selector
+            const categorySelector = document.getElementById('category-selector');
+            if (type === 'expense') {
+                categorySelector.classList.remove('hidden');
+                updateCategoryOptions();
+            } else {
+                categorySelector.classList.add('hidden');
+            }
+            
+            document.getElementById('transaction-modal').classList.add('active');
+        }
+        
+        // Close modal
+        function closeModal() {
+            document.getElementById('transaction-modal').classList.remove('active');
+            document.getElementById('amount-input').value = '';
+            document.getElementById('description-input').value = '';
+            selectedCategory = null;
+            updateCategoryOptions();
+        }
+        
+        // Update category options
+        function updateCategoryOptions() {
+            const container = document.getElementById('category-options');
+            container.innerHTML = '';
+            
+            categories.forEach(category => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = \`category-option \${selectedCategory?.id === category.id ? 'selected' : ''}\`;
+                optionDiv.textContent = category.name;
+                optionDiv.onclick = () => {
+                    selectedCategory = category;
+                    updateCategoryOptions();
+                };
+                container.appendChild(optionDiv);
+            });
+        }
+        
+        // Add transaction
+        function addTransaction() {
+            const amount = parseFloat(document.getElementById('amount-input').value);
+            const description = document.getElementById('description-input').value;
+            
+            if (!amount || amount <= 0) {
+                alert('වලංගු මුදලක් ඇතුළත් කරන්න');
+                return;
+            }
+            
+            if (currentTransactionType === 'expense') {
+                if (!selectedCategory) {
+                    alert('කාණ්ඩයක් තෝරන්න');
+                    return;
+                }
+                if (amount > cashBalance) {
+                    alert('ප්‍රමාණවත් මුදල් නොමැත');
+                    return;
+                }
+            }
+            
+            const transaction = {
+                id: Date.now(),
+                type: currentTransactionType,
+                amount: amount,
+                category: selectedCategory,
+                description: description,
+                date: new Date().toLocaleString('si-LK'),
+                timestamp: Date.now()
+            };
+            
+            if (currentTransactionType === 'income') {
+                bankBalance -= amount;
+                cashBalance += amount;
+            } else {
+                cashBalance -= amount;
+                const categoryIndex = categories.findIndex(cat => cat.id === selectedCategory.id);
+                if (categoryIndex !== -1) {
+                    categories[categoryIndex].balance += amount;
+                    categories[categoryIndex].spent += amount;
+                }
+            }
+            
+            transactions.unshift(transaction);
+            saveData();
+            updateUI();
+            closeModal();
+        }
+        
+        // Initialize app
+        loadData();
+        updateUI();
+        
+        // Handle back button
+        window.addEventListener('popstate', function(event) {
+            if (document.getElementById('transaction-modal').classList.contains('active')) {
+                closeModal();
+                event.preventDefault();
+            }
+        });
+        
+        // Install prompt
+        let deferredPrompt;
+        let installPromptShown = false;
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            if (!installPromptShown) {
+                showInstallPrompt();
+                installPromptShown = true;
+            }
+        });
+        
+        function showInstallPrompt() {
+            const promptDiv = document.createElement('div');
+            promptDiv.id = 'install-prompt';
+            promptDiv.style.cssText = \`
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                right: 20px;
+                background: #fef3c7;
+                border: 2px solid #f59e0b;
+                border-radius: 12px;
+                padding: 16px;
+                text-align: center;
+                color: #92400e;
+                z-index: 10000;
+                font-weight: bold;
+            \`;
+            promptDiv.innerHTML = \`
+                <div style="margin-bottom: 10px;">📱 මෙම app එක ඔබගේ home screen එකට add කරගන්න!</div>
+                <button onclick="installApp()" style="background: #f59e0b; color: white; border: none; padding: 8px 16px; border-radius: 6px; margin: 5px; font-weight: bold; cursor: pointer;">Install App</button>
+                <button onclick="hideInstallPrompt()" style="background: #6b7280; color: white; border: none; padding: 8px 16px; border-radius: 6px; margin: 5px; font-weight: bold; cursor: pointer;">Later</button>
+            \`;
+            document.body.insertBefore(promptDiv, document.body.firstChild);
+        }
+        
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                        hideInstallPrompt();
+                    }
+                    deferredPrompt = null;
+                });
+            } else {
+                alert('කරුණාකර browser menu එකෙන් "Add to Home Screen" select කරන්න');
+            }
+        }
+        
+        function hideInstallPrompt() {
+            const prompt = document.getElementById('install-prompt');
+            if (prompt) {
+                prompt.remove();
+            }
+        }
+        
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>`;
+            
+            // Create blob and download
+            const blob = new Blob([appContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'BudgetTracker-APK.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            // Show success message
+            alert('✅ APK file download කරන ලදී!\n\nකරුණාකර file එක Chrome browser එකේ open කරලා "Install App" click කරන්න.');
+        }
+        
+        function tryApp() {
+            const appContent = `<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1e3a8a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>මුදල් කළමනාකරණ - Budget Tracker</title>
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoi4La44LeU4Lav4La94LeKIOC2muC3heC2uOC2seC3j+C2muC2u+C2qyIsInNob3J0X25hbWUiOiJCdWRnZXQgVHJhY2tlciIsImRlc2NyaXB0aW9uIjoiUGVyc29uYWwgYnVkZ2V0IHRyYWNraW5nIGFwcCBpbiBTaW5oYWxhIiwic3RhcnRfdXJsIjoiLi8iLCJkaXNwbGF5Ijoic3RhbmRhbG9uZSIsImJhY2tncm91bmRfY29sb3IiOiIjMWUzYThhIiwidGhlbWVfY29sb3IiOiIjMWUzYThhIiwib3JpZW50YXRpb24iOiJwb3J0cmFpdC1wcmltYXJ5IiwiaWNvbnMiOlt7InNyYyI6ImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjNhV1IwYUQwaU1Ua3lJaUJvWldsbmFIUTlJakU1TWlJZ2RtbGxkMEp2ZUQwaU1DQXdJREU1TWlBeE9USWlJSGh0Ykc1elBTSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHlNREF3TDNOMlp5SStQSEpsWTNRZ2QybGtkR2c5SWpFNU1pSWdhR1ZwWjJoMFBTSXhPVElpSUdacGJHdzlJaU14WlROaE9HRWlJSEo0UFNJek1DSXZQangwWlhoMElIZzlJamsySWlCNVBTSXhNakFpSUdadmJuUXRabUZ0YVd4NVBTSkJjbWxoYkNJZ1ptOXVkQzF6YVhwbFBTSTRNQ0lnWm05dWRDMTNaV2xuYUhROUltSnZiR1FpSUdacGJHdzlJbmRvYVhSbElpQjBaWGgwTFdGdVkyaHZjajBpYldsa1pHeGxJajdndHJEZ3RwQThMM1JsZUhRK1BDOXpkbWMrIiwic2l6ZXMiOiIxOTJ4MTkyIiwidHlwZSI6ImltYWdlL3N2Zyt4bWwifV19">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f3f4f6;
+            color: #374151;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background: white;
+            position: relative;
+        }
+        
+        .header {
+            background: #1e3a8a;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .header-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .content {
+            padding: 16px;
+        }
+        
+        .balance-container {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .balance-card {
+            flex: 1;
+            padding: 20px;
+            border-radius: 12px;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .bank-card { background: #3b82f6; }
+        .cash-card { background: #10b981; }
+        
+        .balance-label {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+        
+        .balance-amount {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        
+        .action-button {
+            flex: 1;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .income-button { background: #10b981; }
+        .expense-button { background: #ef4444; }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+        
+        .category-card {
+            background: white;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .category-name {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .category-balance {
+            font-size: 16px;
+            font-weight: bold;
+            color: #10b981;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 8px 0 4px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        
+        .progress-overflow {
+            background: #ef4444;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: white;
+            margin: 20px;
+            border-radius: 16px;
+            padding: 20px;
+            width: 90%;
+            max-width: 400px;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .modal-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        .input {
+            width: 100%;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+        
+        .category-selector {
+            margin-bottom: 20px;
+        }
+        
+        .category-option {
+            padding: 12px;
+            border-radius: 8px;
+            background: #f9fafb;
+            margin-bottom: 8px;
+            border: 1px solid #e5e7eb;
+            cursor: pointer;
+        }
+        
+        .category-option.selected {
+            background: #dbeafe;
+            border-color: #3b82f6;
+        }
+        
+        .submit-button {
+            width: 100%;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .submit-button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+        
+        .transaction-item {
+            background: white;
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .transaction-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 16px;
+            background: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+        }
+        
+        .transaction-details {
+            flex: 1;
+        }
+        
+        .transaction-description {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .transaction-date {
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: 2px;
+        }
+        
+        .transaction-amount {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .income-amount { color: #10b981; }
+        .expense-amount { color: #ef4444; }
+        
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-title">මුදල් කළමනාකරණ</div>
+            <div>💰</div>
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            <!-- Balance Cards -->
+            <div class="balance-container">
+                <div class="balance-card bank-card">
+                    <div class="balance-label">බැංකු ශේෂය</div>
+                    <div class="balance-amount" id="bank-balance">රු 50,000</div>
+                </div>
+                <div class="balance-card cash-card">
+                    <div class="balance-label">මුදල් ශේෂය</div>
+                    <div class="balance-amount" id="cash-balance">රු 0</div>
+                </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="action-button income-button" onclick="openModal('income')">
+                    ⬇️ මුදල් ලබාගැනීම
+                </button>
+                <button class="action-button expense-button" onclick="openModal('expense')">
+                    ⬆️ වියදම් කරන්න
+                </button>
+            </div>
+            
+            <!-- Categories -->
+            <div>
+                <div class="section-title">වියදම් කාණ්ඩ</div>
+                <div id="categories-container">
+                    <!-- Categories will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Transactions -->
+            <div>
+                <div class="section-title">මෑත ගනුදෙනු</div>
+                <div id="transactions-container">
+                    <!-- Transactions will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal -->
+    <div id="transaction-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="modal-title">ගනුදෙනුව</div>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            
+            <input type="number" class="input" id="amount-input" placeholder="මුදල (රු)">
+            <input type="text" class="input" id="description-input" placeholder="විස්තරය (අමතර)">
+            
+            <div id="category-selector" class="category-selector hidden">
+                <div style="margin-bottom: 8px; font-weight: 500;">කාණ්ඩය තෝරන්න:</div>
+                <div id="category-options">
+                    <!-- Category options will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <button class="submit-button" id="submit-btn" onclick="addTransaction()">
+                සේව් කරන්න
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        // App State
+        let bankBalance = 50000;
+        let cashBalance = 0;
+        let categories = [
+            { id: 1, name: 'පෑන් මිලදී ගැනීම්', balance: 0, target: 10000, spent: 0, unitPrice: 100 },
+            { id: 2, name: 'කෑම', balance: 0, target: 15000, spent: 0, unitPrice: 200 },
+            { id: 3, name: 'ප්‍රවාහන', balance: 0, target: 8000, spent: 0, unitPrice: 50 }
+        ];
+        let transactions = [];
+        let currentTransactionType = '';
+        let selectedCategory = null;
+        
+        // Load data from localStorage
+        function loadData() {
+            const saved = localStorage.getItem('budgetTrackerData');
+            if (saved) {
+                const data = JSON.parse(saved);
+                bankBalance = data.bankBalance || 50000;
+                cashBalance = data.cashBalance || 0;
+                categories = data.categories || categories;
+                transactions = data.transactions || [];
+            }
+        }
+        
+        // Save data to localStorage
+        function saveData() {
+            const data = {
+                bankBalance,
+                cashBalance,
+                categories,
+                transactions
+            };
+            localStorage.setItem('budgetTrackerData', JSON.stringify(data));
+        }
+        
+        // Format currency
+        function formatCurrency(amount) {
+            return \`රු \${amount.toLocaleString('si-LK')}\`;
+        }
+        
+        // Update UI
+        function updateUI() {
+            document.getElementById('bank-balance').textContent = formatCurrency(bankBalance);
+            document.getElementById('cash-balance').textContent = formatCurrency(cashBalance);
+            updateCategories();
+            updateTransactions();
+        }
+        
+        // Update categories display
+        function updateCategories() {
+            const container = document.getElementById('categories-container');
+            container.innerHTML = '';
+            
+            categories.forEach(category => {
+                const progressPercentage = category.target > 0 ? (category.spent / category.target) * 100 : 0;
+                
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'category-card';
+                categoryDiv.innerHTML = \`
+                    <div class="category-header">
+                        <div class="category-name">\${category.name}</div>
+                        <div class="category-balance">\${formatCurrency(category.balance)}</div>
+                    </div>
+                    <div style="font-size: 14px; color: #6b7280; margin-bottom: 8px;">
+                        වියදම්: \${formatCurrency(category.spent)} / \${formatCurrency(category.target)}
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill \${progressPercentage > 100 ? 'progress-overflow' : ''}" 
+                             style="width: \${Math.min(progressPercentage, 100)}%"></div>
+                    </div>
+                    <div style="font-size: 12px; color: #6b7280; text-align: right; margin-top: 4px;">
+                        \${progressPercentage.toFixed(1)}%
+                    </div>
+                    <div style="font-size: 14px; color: #059669; font-weight: 500; margin-top: 8px;">
+                        ඉතිරි: \${formatCurrency(Math.max(0, category.target - category.spent))}
+                    </div>
+                \`;
+                container.appendChild(categoryDiv);
+            });
+        }
+        
+        // Update transactions display
+        function updateTransactions() {
+            const container = document.getElementById('transactions-container');
+            container.innerHTML = '';
+            
+            const recentTransactions = transactions.slice(0, 10);
+            
+            if (recentTransactions.length === 0) {
+                container.innerHTML = '<div style="text-align: center; color: #6b7280; padding: 20px;">ගනුදෙනු නොමැත</div>';
+                return;
+            }
+            
+            recentTransactions.forEach(transaction => {
+                const transactionDiv = document.createElement('div');
+                transactionDiv.className = 'transaction-item';
+                
+                const icon = transaction.type === 'income' ? '⬇️' : '⬆️';
+                const amountClass = transaction.type === 'income' ? 'income-amount' : 'expense-amount';
+                const sign = transaction.type === 'income' ? '+' : '-';
+                
+                transactionDiv.innerHTML = \`
+                    <div class="transaction-icon">\${icon}</div>
+                    <div class="transaction-details">
+                        <div class="transaction-description">
+                            \${transaction.description || (transaction.type === 'income' ? 'මුදල් ලබාගැනීම' : transaction.category?.name)}
+                        </div>
+                        <div class="transaction-date">\${transaction.date}</div>
+                    </div>
+                    <div class="transaction-amount \${amountClass}">
+                        \${sign}\${formatCurrency(transaction.amount)}
+                    </div>
+                \`;
+                container.appendChild(transactionDiv);
+            });
+        }
+        
+        // Open modal
+        function openModal(type) {
+            if (type === 'expense' && cashBalance <= 0) {
+                alert('ප්‍රථමයෙන් මුදල් ලබාගන්න');
+                return;
+            }
+            
+            currentTransactionType = type;
+            document.getElementById('modal-title').textContent = 
+                type === 'income' ? 'මුදල් ලබාගැනීම' : 'වියදම් කරන්න';
+            
+            // Show/hide category selector
+            const categorySelector = document.getElementById('category-selector');
+            if (type === 'expense') {
+                categorySelector.classList.remove('hidden');
+                updateCategoryOptions();
+            } else {
+                categorySelector.classList.add('hidden');
+            }
+            
+            document.getElementById('transaction-modal').classList.add('active');
+        }
+        
+        // Close modal
+        function closeModal() {
+            document.getElementById('transaction-modal').classList.remove('active');
+            document.getElementById('amount-input').value = '';
+            document.getElementById('description-input').value = '';
+            selectedCategory = null;
+            updateCategoryOptions();
+        }
+        
+        // Update category options
+        function updateCategoryOptions() {
+            const container = document.getElementById('category-options');
+            container.innerHTML = '';
+            
+            categories.forEach(category => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = \`category-option \${selectedCategory?.id === category.id ? 'selected' : ''}\`;
+                optionDiv.textContent = category.name;
+                optionDiv.onclick = () => {
+                    selectedCategory = category;
+                    updateCategoryOptions();
+                };
+                container.appendChild(optionDiv);
+            });
+        }
+        
+        // Add transaction
+        function addTransaction() {
+            const amount = parseFloat(document.getElementById('amount-input').value);
+            const description = document.getElementById('description-input').value;
+            
+            if (!amount || amount <= 0) {
+                alert('වලංගු මුදලක් ඇතුළත් කරන්න');
+                return;
+            }
+            
+            if (currentTransactionType === 'expense') {
+                if (!selectedCategory) {
+                    alert('කාණ්ඩයක් තෝරන්න');
+                    return;
+                }
+                if (amount > cashBalance) {
+                    alert('ප්‍රමාණවත් මුදල් නොමැත');
+                    return;
+                }
+            }
+            
+            const transaction = {
+                id: Date.now(),
+                type: currentTransactionType,
+                amount: amount,
+                category: selectedCategory,
+                description: description,
+                date: new Date().toLocaleString('si-LK'),
+                timestamp: Date.now()
+            };
+            
+            if (currentTransactionType === 'income') {
+                bankBalance -= amount;
+                cashBalance += amount;
+            } else {
+                cashBalance -= amount;
+                const categoryIndex = categories.findIndex(cat => cat.id === selectedCategory.id);
+                if (categoryIndex !== -1) {
+                    categories[categoryIndex].balance += amount;
+                    categories[categoryIndex].spent += amount;
+                }
+            }
+            
+            transactions.unshift(transaction);
+            saveData();
+            updateUI();
+            closeModal();
+        }
+        
+        // Initialize app
+        loadData();
+        updateUI();
+        
+        // Handle back button
+        window.addEventListener('popstate', function(event) {
+            if (document.getElementById('transaction-modal').classList.contains('active')) {
+                closeModal();
+                event.preventDefault();
+            }
+        });
+        
+        // Install prompt
+        let deferredPrompt;
+        let installPromptShown = false;
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            if (!installPromptShown) {
+                showInstallPrompt();
+                installPromptShown = true;
+            }
+        });
+        
+        function showInstallPrompt() {
+            const promptDiv = document.createElement('div');
+            promptDiv.id = 'install-prompt';
+            promptDiv.style.cssText = \`
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                right: 20px;
+                background: #fef3c7;
+                border: 2px solid #f59e0b;
+                border-radius: 12px;
+                padding: 16px;
+                text-align: center;
+                color: #92400e;
+                z-index: 10000;
+                font-weight: bold;
+            \`;
+            promptDiv.innerHTML = \`
+                <div style="margin-bottom: 10px;">📱 මෙම app එක ඔබගේ home screen එකට add කරගන්න!</div>
+                <button onclick="installApp()" style="background: #f59e0b; color: white; border: none; padding: 8px 16px; border-radius: 6px; margin: 5px; font-weight: bold; cursor: pointer;">Install App</button>
+                <button onclick="hideInstallPrompt()" style="background: #6b7280; color: white; border: none; padding: 8px 16px; border-radius: 6px; margin: 5px; font-weight: bold; cursor: pointer;">Later</button>
+            \`;
+            document.body.insertBefore(promptDiv, document.body.firstChild);
+        }
+        
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                        hideInstallPrompt();
+                    }
+                    deferredPrompt = null;
+                });
+            } else {
+                alert('කරුණාකර browser menu එකෙන් "Add to Home Screen" select කරන්න');
+            }
+        }
+        
+        function hideInstallPrompt() {
+            const prompt = document.getElementById('install-prompt');
+            if (prompt) {
+                prompt.remove();
+            }
+        }
+        
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>`;
+            const newWindow = window.open();
+            newWindow.document.write(appContent);
+            newWindow.document.close();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<svg width="320" height="200" viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg">
+        <rect width="320" height="200" fill="#1e3a8a"/>
+        <text x="160" y="80" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="white" text-anchor="middle">රු</text>
+        <text x="160" y="110.00000000000001" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">මුදල් කළමනාකරණ</text>
+        <text x="160" y="130" font-family="Arial, sans-serif" font-size="8" fill="#a0a0a0" text-anchor="middle">Budget Tracker</text>
+    </svg>
