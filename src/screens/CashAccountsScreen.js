@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { TriangleColorPicker } from 'react-native-color-picker';
-import { AppContext } from '../../App';
+import { useUserProfile } from '../contexts/UserProfileContext';
 
 const PRESET_COLORS = [
   '#ef4444', '#f97316', '#f59e0b', '#eab308', 
@@ -19,38 +19,38 @@ const PRESET_COLORS = [
   '#8b5cf6', '#a855f7', '#d946ef', '#ec4899',
 ];
 
-export default function BankAccountsScreen() {
-  const { accounts, setAccounts, darkMode } = useContext(AppContext);
+export default function CashAccountsScreen() {
+  const { currentUser, updateAccounts } = useUserProfile();
+  const accounts = currentUser?.accounts || { bank: [], cash: [], returns: [] };
+  const darkMode = currentUser?.settings?.darkMode ?? true;
   const [modalVisible, setModalVisible] = useState(false);
   const [colorPickerVisible, setColorPickerVisible] = useState(false);
   const [editingAccount, setEditingAccount] = useState(null);
   const [formData, setFormData] = useState({
     name: '',
-    accountNumber: '',
-    type: 'බැංකුරිමි',
     balance: '0',
-    color: '#6366f1',
+    color: '#10b981',
   });
   
   const styles = getStyles(darkMode);
   
   // Calculate total
-  const totalBalance = accounts.bank.reduce((sum, acc) => sum + (acc.balance || 0), 0);
+  const totalBalance = accounts.cash.reduce((sum, acc) => sum + (acc.balance || 0), 0);
   
-  const handleSave = () => {
+  const handleSave = async () => {
     const balance = parseFloat(formData.balance) || 0;
     
+    let updatedAccounts;
     if (editingAccount) {
       // Update existing account
-      const updatedAccounts = {
+      updatedAccounts = {
         ...accounts,
-        bank: accounts.bank.map(acc => 
+        cash: accounts.cash.map(acc => 
           acc.id === editingAccount.id 
             ? { ...acc, ...formData, balance }
             : acc
         )
       };
-      setAccounts(updatedAccounts);
     } else {
       // Add new account
       const newAccount = {
@@ -58,20 +58,22 @@ export default function BankAccountsScreen() {
         ...formData,
         balance,
       };
-      setAccounts({
+      updatedAccounts = {
         ...accounts,
-        bank: [...accounts.bank, newAccount]
-      });
+        cash: [...accounts.cash, newAccount]
+      };
     }
     
+    await updateAccounts(updatedAccounts);
     closeModal();
   };
   
-  const handleDelete = (id) => {
-    setAccounts({
+  const handleDelete = async (id) => {
+    const updatedAccounts = {
       ...accounts,
-      bank: accounts.bank.filter(acc => acc.id !== id)
-    });
+      cash: accounts.cash.filter(acc => acc.id !== id)
+    };
+    await updateAccounts(updatedAccounts);
   };
   
   const openModal = (account = null) => {
@@ -79,19 +81,15 @@ export default function BankAccountsScreen() {
       setEditingAccount(account);
       setFormData({
         name: account.name,
-        accountNumber: account.accountNumber,
-        type: account.type,
         balance: account.balance.toString(),
-        color: account.color || '#6366f1',
+        color: account.color || '#10b981',
       });
     } else {
       setEditingAccount(null);
       setFormData({
         name: '',
-        accountNumber: '',
-        type: 'බැංකුරිමි',
         balance: '0',
-        color: '#6366f1',
+        color: '#10b981',
       });
     }
     setModalVisible(true);
@@ -111,26 +109,26 @@ export default function BankAccountsScreen() {
     <View style={styles.container}>
       {/* Total Balance */}
       <View style={styles.totalCard}>
-        <Text style={styles.totalLabel}>සම්පූර්ණ බැංකු ශේෂය</Text>
+        <Text style={styles.totalLabel}>සම්පූර්ණ මුදල් ශේෂය</Text>
         <Text style={styles.totalAmount}>රු {totalBalance.toLocaleString()}</Text>
-        <Text style={styles.accountCount}>{accounts.bank.length} ගිණුම් වලින්</Text>
+        <Text style={styles.accountCount}>{accounts.cash.length} ගිණුම් වලින්</Text>
       </View>
       
       {/* Accounts List */}
       <ScrollView style={styles.accountsList}>
-        {accounts.bank.length === 0 ? (
+        {accounts.cash.length === 0 ? (
           <View style={styles.emptyState}>
-            <Icon name="bank-outline" size={64} color="#6b7280" />
-            <Text style={styles.emptyText}>බැංකු ගිණුම් නැත</Text>
+            <Icon name="cash-multiple" size={64} color="#6b7280" />
+            <Text style={styles.emptyText}>මුදල් ගිණුම් නැත</Text>
             <Text style={styles.emptySubtext}>නව ගිණුමක් එක් කරන්න</Text>
           </View>
         ) : (
-          accounts.bank.map(account => (
+          accounts.cash.map(account => (
             <View 
               key={account.id} 
               style={[
                 styles.accountCard,
-                { borderLeftColor: account.color || '#6366f1', borderLeftWidth: 5 }
+                { borderLeftColor: account.color || '#10b981', borderLeftWidth: 5 }
               ]}
             >
               <View style={styles.accountInfo}>
@@ -138,15 +136,11 @@ export default function BankAccountsScreen() {
                   <View 
                     style={[
                       styles.colorIndicator, 
-                      { backgroundColor: account.color || '#6366f1' }
+                      { backgroundColor: account.color || '#10b981' }
                     ]} 
                   />
                   <Text style={styles.accountName}>{account.name}</Text>
                 </View>
-                <Text style={styles.accountNumber}>
-                  ගිණුම් අංකය: {account.accountNumber}
-                </Text>
-                <Text style={styles.accountType}>වර්ගය: {account.type}</Text>
                 <Text style={styles.accountBalance}>
                   ශේෂය: රු {account.balance.toLocaleString()}
                 </Text>
@@ -156,7 +150,7 @@ export default function BankAccountsScreen() {
                   style={styles.editButton}
                   onPress={() => openModal(account)}
                 >
-                  <Icon name="pencil" size={20} color="#6366f1" />
+                  <Icon name="pencil" size={20} color="#10b981" />
                 </TouchableOpacity>
                 <TouchableOpacity 
                   style={styles.deleteButton}
@@ -189,23 +183,15 @@ export default function BankAccountsScreen() {
           <View style={styles.modalContent}>
             <ScrollView showsVerticalScrollIndicator={false}>
               <Text style={styles.modalTitle}>
-                {editingAccount ? 'ගිණුම සංස්කරණය' : 'නව ගිණුමක් එක් කරන්න'}
+                {editingAccount ? 'ගිණුම සංස්කරණය' : 'නව මුදල් ගිණුමක් එක් කරන්න'}
               </Text>
               
               <TextInput
                 style={styles.input}
-                placeholder="බැංකු නම"
+                placeholder="ගිණුම් නම (උදා: පුබුන මුදල්, වොලට්)"
                 placeholderTextColor="#6b7280"
                 value={formData.name}
                 onChangeText={(text) => setFormData({ ...formData, name: text })}
-              />
-              
-              <TextInput
-                style={styles.input}
-                placeholder="ගිණුම් අංකය"
-                placeholderTextColor="#6b7280"
-                value={formData.accountNumber}
-                onChangeText={(text) => setFormData({ ...formData, accountNumber: text })}
               />
               
               <TextInput
@@ -257,7 +243,7 @@ export default function BankAccountsScreen() {
                   style={styles.customColorButton}
                   onPress={() => setColorPickerVisible(!colorPickerVisible)}
                 >
-                  <Icon name="palette" size={20} color="#6366f1" />
+                  <Icon name="palette" size={20} color="#10b981" />
                   <Text style={styles.customColorText}>
                     {colorPickerVisible ? 'වර්ණ තෝරනය වසන්න' : 'අභිරුචි වර්ණයක් තෝරන්න'}
                   </Text>
@@ -309,14 +295,14 @@ const getStyles = (darkMode) => StyleSheet.create({
     backgroundColor: darkMode ? '#0f172a' : '#f1f5f9',
   },
   totalCard: {
-    backgroundColor: '#6366f1',
+    backgroundColor: '#10b981',
     padding: 25,
     margin: 15,
     borderRadius: 15,
     alignItems: 'center',
   },
   totalLabel: {
-    color: '#e0e7ff',
+    color: '#d1fae5',
     fontSize: 14,
     marginBottom: 10,
   },
@@ -327,7 +313,7 @@ const getStyles = (darkMode) => StyleSheet.create({
     marginBottom: 5,
   },
   accountCount: {
-    color: '#e0e7ff',
+    color: '#d1fae5',
     fontSize: 12,
   },
   accountsList: {
@@ -346,7 +332,7 @@ const getStyles = (darkMode) => StyleSheet.create({
   accountHeader: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 5,
+    marginBottom: 8,
   },
   colorIndicator: {
     width: 12,
@@ -361,18 +347,6 @@ const getStyles = (darkMode) => StyleSheet.create({
     color: darkMode ? '#fff' : '#1e293b',
     fontSize: 18,
     fontWeight: 'bold',
-  },
-  accountNumber: {
-    color: darkMode ? '#94a3b8' : '#64748b',
-    fontSize: 12,
-    marginBottom: 3,
-    marginLeft: 20,
-  },
-  accountType: {
-    color: darkMode ? '#94a3b8' : '#64748b',
-    fontSize: 12,
-    marginBottom: 5,
-    marginLeft: 20,
   },
   accountBalance: {
     color: '#10b981',
@@ -413,7 +387,7 @@ const getStyles = (darkMode) => StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 30,
-    backgroundColor: '#6366f1',
+    backgroundColor: '#10b981',
     alignItems: 'center',
     justifyContent: 'center',
     elevation: 5,
@@ -514,7 +488,7 @@ const getStyles = (darkMode) => StyleSheet.create({
     gap: 8,
   },
   customColorText: {
-    color: '#6366f1',
+    color: '#10b981',
     fontSize: 14,
     fontWeight: '600',
   },
@@ -543,7 +517,7 @@ const getStyles = (darkMode) => StyleSheet.create({
     backgroundColor: '#6b7280',
   },
   saveButton: {
-    backgroundColor: '#6366f1',
+    backgroundColor: '#10b981',
   },
   buttonText: {
     color: '#fff',

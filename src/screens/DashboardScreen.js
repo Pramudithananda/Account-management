@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import {
   View,
   Text,
@@ -8,10 +8,13 @@ import {
   FlatList,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { AppContext } from '../../App';
+import { useUserProfile } from '../contexts/UserProfileContext';
 
 export default function DashboardScreen({ navigation }) {
-  const { accounts, transactions, darkMode } = useContext(AppContext);
+  const { currentUser } = useUserProfile();
+  const accounts = currentUser?.accounts || { bank: [], cash: [], returns: [] };
+  const transactions = currentUser?.transactions || [];
+  const darkMode = currentUser?.settings?.darkMode ?? true;
   
   // Calculate totals
   const totalBank = accounts.bank.reduce((sum, acc) => sum + (acc.balance || 0), 0);
