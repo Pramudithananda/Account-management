@@ -1,0 +1,12 @@
+node_modules/
+.expo/
+.expo-shared/
+android/.gradle/
+android/.idea/
+android/local.properties
+android/app/build/
+android/build/
+*.keystore
+*.iml
+.idea/
+.DS_Store
