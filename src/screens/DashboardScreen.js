@@ -8,7 +8,7 @@ import {
   FlatList,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { AppContext } from '../../App';
+import { AppContext } from '../../app';
 
 export default function DashboardScreen({ navigation }) {
   const { accounts, transactions, darkMode } = useContext(AppContext);
