@@ -8,10 +8,10 @@ import {
   FlatList,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { AppContext } from '../../App';
+import { AppContext } from '../contexts/AppContext';
 
 export default function DashboardScreen({ navigation }) {
-  const { accounts, transactions, darkMode } = useContext(AppContext);
+  const { accounts, transactions, darkMode, currentUser } = useContext(AppContext);
   
   // Calculate totals
   const totalBank = accounts.bank.reduce((sum, acc) => sum + (acc.balance || 0), 0);
@@ -40,6 +40,20 @@ export default function DashboardScreen({ navigation }) {
   
   return (
     <ScrollView style={styles.container}>
+      {/* User Info */}
+      {currentUser && (
+        <View style={styles.userCard}>
+          <Icon name="account-circle" size={40} color="#6366f1" />
+          <View style={styles.userInfo}>
+            <Text style={styles.userName}>{currentUser.name}</Text>
+            <Text style={styles.userEmail}>{currentUser.email}</Text>
+          </View>
+          <TouchableOpacity onPress={() => navigation.navigate('Settings')}>
+            <Icon name="account-switch" size={24} color="#6366f1" />
+          </TouchableOpacity>
+        </View>
+      )}
+      
       {/* Summary Cards */}
       <View style={styles.summaryContainer}>
         <TouchableOpacity 
@@ -124,6 +138,27 @@ const getStyles = (darkMode) => StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: darkMode ? '#0f172a' : '#f1f5f9',
+  },
+  userCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: darkMode ? '#1e293b' : '#fff',
+    margin: 15,
+    padding: 15,
+    borderRadius: 15,
+    gap: 12,
+  },
+  userInfo: {
+    flex: 1,
+  },
+  userName: {
+    color: darkMode ? '#fff' : '#1e293b',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  userEmail: {
+    color: darkMode ? '#94a3b8' : '#64748b',
+    fontSize: 14,
   },
   summaryContainer: {
     flexDirection: 'row',

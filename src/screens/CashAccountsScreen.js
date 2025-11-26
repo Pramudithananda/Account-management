@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { TriangleColorPicker } from 'react-native-color-picker';
-import { AppContext } from '../../App';
+import { AppContext } from '../contexts/AppContext';
 
 const PRESET_COLORS = [
   '#ef4444', '#f97316', '#f59e0b', '#eab308', 
