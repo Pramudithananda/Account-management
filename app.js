@@ -19,6 +19,19 @@ const Stack = createNativeStackNavigator();
 // App Context for state management
 export const AppContext = React.createContext();
 
+const createEmptyAccounts = () => ({
+  bank: [],
+  cash: [],
+  returns: [],
+});
+
+const CATEGORY_SEED = [
+  { id: '1', name: 'පෙන් මැදි ගැනීම', target: 10000, color: '#6366f1' },
+  { id: '2', name: 'කෑම', target: 10000, color: '#10b981' },
+];
+
+const createDefaultCategories = () => CATEGORY_SEED.map((category) => ({ ...category }));
+
 function MainTabs() {
   return (
     <Tab.Navigator
@@ -81,15 +94,10 @@ function MainTabs() {
 }
 
 export default function App() {
-  const [accounts, setAccounts] = useState({
-    bank: [],
-    cash: [],
-    returns: []
-  });
-  
-  const [transactions, setTransactions] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [darkMode, setDarkMode] = useState(true);
+  const [accounts, setAccountsState] = useState(createEmptyAccounts());
+  const [transactions, setTransactionsState] = useState([]);
+  const [categories, setCategoriesState] = useState(createDefaultCategories());
+  const [darkMode, setDarkModeState] = useState(true);
   
   // Load data from AsyncStorage
   useEffect(() => {
@@ -103,20 +111,17 @@ export default function App() {
       const storedCategories = await AsyncStorage.getItem('categories');
       const storedDarkMode = await AsyncStorage.getItem('darkMode');
       
-      if (storedAccounts) setAccounts(JSON.parse(storedAccounts));
-      if (storedTransactions) setTransactions(JSON.parse(storedTransactions));
-      if (storedCategories) setCategories(JSON.parse(storedCategories));
-      if (storedDarkMode) setDarkMode(JSON.parse(storedDarkMode));
-      
-      // Initialize with sample data if empty
-      if (!storedCategories) {
-        const defaultCategories = [
-          { id: '1', name: 'පෙන් මැදි ගැනීම', target: 10000, spent: 3000 },
-          { id: '2', name: 'කෑම', target: 10000, spent: 2500 }
-        ];
-        setCategories(defaultCategories);
-        await AsyncStorage.setItem('categories', JSON.stringify(defaultCategories));
+      if (storedAccounts) setAccountsState(JSON.parse(storedAccounts));
+      if (storedTransactions) setTransactionsState(JSON.parse(storedTransactions));
+      if (storedCategories) {
+        setCategoriesState(JSON.parse(storedCategories));
+      } else {
+        const defaults = createDefaultCategories();
+        setCategoriesState(defaults);
+        await AsyncStorage.setItem('categories', JSON.stringify(defaults));
       }
+      if (storedDarkMode) setDarkModeState(JSON.parse(storedDarkMode));
+      
     } catch (error) {
       console.error('Error loading data:', error);
     }
@@ -130,27 +135,68 @@ export default function App() {
     }
   };
   
+  const resetAllData = async () => {
+    try {
+      const emptyAccounts = createEmptyAccounts();
+      const defaultCategories = createDefaultCategories();
+      setAccountsState(emptyAccounts);
+      setTransactionsState([]);
+      setCategoriesState(defaultCategories);
+      setDarkModeState(true);
+      await AsyncStorage.multiRemove(['accounts', 'transactions', 'categories', 'darkMode']);
+      await AsyncStorage.setItem('categories', JSON.stringify(defaultCategories));
+    } catch (error) {
+      console.error('Error resetting data:', error);
+    }
+  };
+
+  const importBackup = async (payload = {}) => {
+    try {
+      if (payload.accounts) {
+        setAccountsState(payload.accounts);
+        await saveData('accounts', payload.accounts);
+      }
+      if (payload.transactions) {
+        setTransactionsState(payload.transactions);
+        await saveData('transactions', payload.transactions);
+      }
+      if (payload.categories) {
+        setCategoriesState(payload.categories);
+        await saveData('categories', payload.categories);
+      }
+      if (typeof payload.darkMode === 'boolean') {
+        setDarkModeState(payload.darkMode);
+        await saveData('darkMode', payload.darkMode);
+      }
+    } catch (error) {
+      console.error('Error importing data:', error);
+      throw error;
+    }
+  };
+
   const contextValue = {
     accounts,
     setAccounts: (newAccounts) => {
-      setAccounts(newAccounts);
+      setAccountsState(newAccounts);
       saveData('accounts', newAccounts);
     },
     transactions,
     setTransactions: (newTransactions) => {
-      setTransactions(newTransactions);
+      setTransactionsState(newTransactions);
       saveData('transactions', newTransactions);
     },
     categories,
     setCategories: (newCategories) => {
-      setCategories(newCategories);
+      setCategoriesState(newCategories);
       saveData('categories', newCategories);
     },
     darkMode,
     setDarkMode: (mode) => {
-      setDarkMode(mode);
+      setDarkModeState(mode);
       saveData('darkMode', mode);
     },
+    resetAllData,
+    importBackup,
   };
   
   return (
