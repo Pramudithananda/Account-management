@@ -111,8 +111,8 @@ export default function App() {
       // Initialize with sample data if empty
       if (!storedCategories) {
         const defaultCategories = [
-          { id: '1', name: 'පෙන් මැදි ගැනීම', target: 10000, spent: 3000 },
-          { id: '2', name: 'කෑම', target: 10000, spent: 2500 }
+          { id: '1', name: 'ආහාර', target: 10000, spent: 3000 },
+          { id: '2', name: 'ප්‍රවාහන', target: 5000, spent: 2500 }
         ];
         setCategories(defaultCategories);
         await AsyncStorage.setItem('categories', JSON.stringify(defaultCategories));

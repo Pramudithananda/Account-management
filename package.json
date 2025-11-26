@@ -6,7 +6,12 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "clear": "expo start --clear",
+    "build:preview": "eas build --platform android --profile preview",
+    "build:production": "eas build --platform android --profile production",
+    "setup": "npm install && npm run check-cli",
+    "check-cli": "command -v expo || npm install -g expo-cli && command -v eas || npm install -g eas-cli"
   },
   "dependencies": {
     "react": "18.2.0",
