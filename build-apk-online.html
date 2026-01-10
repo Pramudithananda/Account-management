@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Ledger - APK Builder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 16px;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .option-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .option-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+        }
+        
+        .option-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .option-card p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 14px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #333;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .btn-secondary:hover {
+            background: #e9ecef;
+        }
+        
+        .steps {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .steps ol {
+            margin-left: 20px;
+            color: #555;
+        }
+        
+        .steps li {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #856404;
+        }
+        
+        .success {
+            background: #d4edda;
+            border: 1px solid #28a745;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #155724;
+        }
+        
+        .icon {
+            font-size: 24px;
+            vertical-align: middle;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💰 Financial Ledger APK Builder</h1>
+            <p>මූල්‍ය පොත - Android App Build කිරීම</p>
+        </div>
+        
+        <div class="content">
+            <!-- Option 1: Quick APK Build -->
+            <div class="section">
+                <h2><span class="icon">🚀</span> ක්‍රමය 1: ඉක්මන් APK Build (Recommended)</h2>
+                
+                <div class="option-card">
+                    <h3><span class="icon">☁️</span> Expo EAS Build භාවිතා කිරීම</h3>
+                    <p>Cloud service එකක් භාවිතා කර APK build කරන්න - Android SDK install කිරීම අවශ්‍ය නැහැ</p>
+                    
+                    <div class="steps">
+                        <ol>
+                            <li>Expo account එකක් හදාගන්න: <a href="https://expo.dev/signup" target="_blank">expo.dev/signup</a></li>
+                            <li>Terminal එකේ පහත commands run කරන්න:
+                                <div class="code-block">
+cd /workspace/FinancialLedger
+npm install -g eas-cli
+eas login
+eas build:configure
+eas build --platform android --profile preview</div>
+                            </li>
+                            <li>Build complete වුනාම download link එකක් ලැබෙනවා</li>
+                            <li>APK download කර phone එකට install කරන්න</li>
+                        </ol>
+                    </div>
+                    
+                    <a href="https://docs.expo.dev/build/setup/" target="_blank" class="btn btn-primary">
+                        Expo Documentation
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Option 2: GitHub Actions -->
+            <div class="section">
+                <h2><span class="icon">🔧</span> ක්‍රමය 2: GitHub Actions භාවිතා කිරීම</h2>
+                
+                <div class="option-card">
+                    <h3><span class="icon">🐙</span> Automated Build with GitHub</h3>
+                    <p>GitHub repository එකක upload කර automatic APK build කරන්න</p>
+                    
+                    <div class="steps">
+                        <ol>
+                            <li>GitHub repository එකක් create කරන්න</li>
+                            <li>Project files upload කරන්න</li>
+                            <li>.github/workflows/build.yml file එක add කරන්න:
+                                <div class="code-block">
+name: Build APK
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup JDK
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+    - name: Install dependencies
+      run: npm install
+    - name: Build APK
+      run: |
+        cd android
+        ./gradlew assembleDebug
+    - name: Upload APK
+      uses: actions/upload-artifact@v3
+      with:
+        name: app-debug
+        path: android/app/build/outputs/apk/debug/app-debug.apk</div>
+                            </li>
+                            <li>Push කරාම automatic build වෙනවා</li>
+                            <li>Actions tab එකෙන් APK download කරගන්න</li>
+                        </ol>
+                    </div>
+                    
+                    <a href="https://github.com/new" target="_blank" class="btn btn-primary">
+                        Create GitHub Repository
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Option 3: Online Build Services -->
+            <div class="section">
+                <h2><span class="icon">🌐</span> ක්‍රමය 3: Online Build Services</h2>
+                
+                <div class="option-card">
+                    <h3><span class="icon">📱</span> AppCenter හෝ Codemagic භාවිතා කිරීම</h3>
+                    <p>Professional build services භාවිතා කර APK generate කරන්න</p>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <span>✓</span> Microsoft AppCenter
+                        </div>
+                        <div class="feature-item">
+                            <span>✓</span> Codemagic CI/CD
+                        </div>
+                        <div class="feature-item">
+                            <span>✓</span> Bitrise
+                        </div>
+                        <div class="feature-item">
+                            <span>✓</span> CircleCI
+                        </div>
+                    </div>
+                    
+                    <p>මේ services වලින් free tier එකක් තියෙනවා monthly builds කීපයක් සඳහා</p>
+                    
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <a href="https://appcenter.ms/" target="_blank" class="btn btn-secondary">
+                            AppCenter
+                        </a>
+                        <a href="https://codemagic.io/start/" target="_blank" class="btn btn-secondary">
+                            Codemagic
+                        </a>
+                        <a href="https://www.bitrise.io/" target="_blank" class="btn btn-secondary">
+                            Bitrise
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Local Build -->
+            <div class="section">
+                <h2><span class="icon">💻</span> ක්‍රමය 4: Local Machine Build</h2>
+                
+                <div class="option-card">
+                    <h3><span class="icon">🖥️</span> ඔබගේ පරිගණකයේ Build කිරීම</h3>
+                    
+                    <div class="warning">
+                        <strong>⚠️ අවශ්‍යතා:</strong> Android Studio සහ JDK 17 install කර තිබිය යුතුය
+                    </div>
+                    
+                    <div class="code-block">
+# 1. Download and extract project
+tar -xzf FinancialLedger.tar.gz
+cd FinancialLedger
+
+# 2. Install dependencies
+npm install
+
+# 3. Build debug APK
+cd android
+./gradlew assembleDebug
+
+# 4. Find APK at:
+# android/app/build/outputs/apk/debug/app-debug.apk</div>
+                    
+                    <a href="/workspace/FinancialLedger.tar.gz" download class="btn btn-primary">
+                        Download Source Code
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Docker Build -->
+            <div class="section">
+                <h2><span class="icon">🐳</span> ක්‍රමය 5: Docker භාවිතා කිරීම</h2>
+                
+                <div class="option-card">
+                    <h3><span class="icon">📦</span> Docker Container එකක Build කිරීම</h3>
+                    <p>Android SDK install නොකර Docker භාවිතා කර build කරන්න</p>
+                    
+                    <div class="code-block">
+# Docker image build කරන්න
+docker build -f Dockerfile.android -t financial-ledger-builder .
+
+# APK build කරන්න
+docker run -v $(pwd)/output:/output financial-ledger-builder
+
+# APK file output folder එකේ තියෙනවා</div>
+                    
+                    <a href="https://www.docker.com/products/docker-desktop/" target="_blank" class="btn btn-secondary">
+                        Install Docker
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Success Message -->
+            <div class="success">
+                <strong>✅ Recommended:</strong> Expo EAS Build භාවිතා කිරීම ලේසිම සහ වේගවත්ම ක්‍රමයයි. Free tier එකෙන් මාසයකට builds 30ක් කරන්න පුළුවන්.
+            </div>
+            
+            <!-- Features -->
+            <div class="section">
+                <h2><span class="icon">✨</span> App Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <span>💰</span> බැංකු ගිණුම් කළමනාකරණය
+                    </div>
+                    <div class="feature-item">
+                        <span>💵</span> අතැති මුදල් tracking
+                    </div>
+                    <div class="feature-item">
+                        <span>📊</span> වියදම් කාණ්ඩ
+                    </div>
+                    <div class="feature-item">
+                        <span>🎯</span> Budget targets
+                    </div>
+                    <div class="feature-item">
+                        <span>📈</span> Progress tracking
+                    </div>
+                    <div class="feature-item">
+                        <span>🔄</span> මුදල් මාරු කිරීම්
+                    </div>
+                    <div class="feature-item">
+                        <span>📝</span> Transaction history
+                    </div>
+                    <div class="feature-item">
+                        <span>🌐</span> සිංහල/English
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2024 Financial Ledger App | Built with React Native</p>
+            <p>Support: Use any of the above methods to build your APK</p>
+        </div>
+    </div>
+</body>
+</html>

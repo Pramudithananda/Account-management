@@ -1,0 +1,50 @@
+# Android build environment for React Native
+FROM ubuntu:22.04
+
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    curl \
+    wget \
+    unzip \
+    git \
+    openjdk-17-jdk \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set JAVA_HOME
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+ENV PATH=$PATH:$JAVA_HOME/bin
+
+# Install Android SDK
+ENV ANDROID_SDK_ROOT=/opt/android-sdk
+ENV ANDROID_HOME=/opt/android-sdk
+ENV PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools
+
+RUN mkdir -p ${ANDROID_SDK_ROOT}/cmdline-tools && \
+    cd ${ANDROID_SDK_ROOT}/cmdline-tools && \
+    wget -q https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip && \
+    unzip -q commandlinetools-linux-9477386_latest.zip && \
+    mv cmdline-tools latest && \
+    rm commandlinetools-linux-9477386_latest.zip
+
+# Accept licenses and install SDK components
+RUN yes | sdkmanager --licenses && \
+    sdkmanager "platform-tools" \
+    "platforms;android-33" \
+    "build-tools;33.0.0" \
+    "extras;google;m2repository" \
+    "extras;android;m2repository"
+
+# Install Node.js
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+    apt-get install -y nodejs
+
+WORKDIR /app
+
+# Copy project files
+COPY . .
+
+# Install dependencies
+RUN npm install
+
+# Build APK
+CMD ["sh", "-c", "cd android && ./gradlew assembleDebug && cp app/build/outputs/apk/debug/app-debug.apk /app/"]

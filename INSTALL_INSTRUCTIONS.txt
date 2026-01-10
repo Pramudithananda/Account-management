@@ -1,0 +1,103 @@
+================================================================================
+                    FINANCIAL LEDGER APP - මූල්‍ය පොත
+                          Installation Guide
+================================================================================
+
+📱 APK DOWNLOAD LINK:
+--------------------
+Direct Download: https://bashupload.com/Q2KaB/tTdbB.apk
+
+Alternative download command:
+wget https://bashupload.com/Q2KaB/tTdbB.apk -O FinancialLedger.apk
+
+================================================================================
+
+📲 INSTALLATION STEPS (ස්ථාපනය කිරීමේ පියවර):
+--------------------------------------------
+
+1. DOWNLOAD APK:
+   - Click the link above හෝ
+   - Copy link and paste in browser
+
+2. ENABLE INSTALLATION:
+   - Settings → Security → Unknown Sources → Enable
+   - හෝ Settings → Apps → Special Access → Install Unknown Apps
+
+3. INSTALL APP:
+   - Open downloaded APK file
+   - Click "Install" 
+   - Wait for installation
+   - Click "Open" to launch
+
+================================================================================
+
+✨ APP FEATURES:
+---------------
+✅ බැංකු ගිණුම් කළමනාකරණය (Bank Account Management)
+✅ අතැති මුදල් පාලනය (Cash Management)
+✅ වියදම් කාණ්ඩ (Expense Categories)
+   - පෑන් මිලදී ගැනීම්
+   - ලිපි ද්‍රව්‍ය
+   - ප්‍රවාහන
+   - ආහාර
+✅ අයවැය ඉලක්ක (Budget Targets)
+✅ ගනුදෙනු ඉතිහාසය (Transaction History)
+✅ මුදල් මාරු කිරීම (Money Transfers)
+✅ සිංහල/English Interface
+
+================================================================================
+
+📱 SYSTEM REQUIREMENTS:
+----------------------
+• Android 5.0 (API 21) or higher
+• 50MB free storage
+• 1GB RAM minimum
+
+================================================================================
+
+⚠️ TROUBLESHOOTING:
+------------------
+
+Problem: "App not installed" error
+Solution: 
+- Enable Unknown Sources
+- Clear package installer cache
+- Restart phone and try again
+
+Problem: App crashes on startup
+Solution:
+- Clear app data
+- Reinstall the app
+- Check Android version compatibility
+
+================================================================================
+
+🔧 FOR DEVELOPERS:
+-----------------
+
+To build from source:
+1. Download source code
+2. Install Node.js and Android Studio
+3. Run: npm install
+4. Run: cd android && ./gradlew assembleDebug
+
+Source code available at:
+https://bashupload.com/41Z5j/4DkOr.gz
+
+================================================================================
+
+📞 SUPPORT:
+----------
+For help with installation or usage, refer to the documentation
+or build instructions included with the source code.
+
+App Version: 1.0.0
+Build Date: 2024
+Package: com.financialledger.app
+
+================================================================================
+
+Thank you for using Financial Ledger App!
+ස්තූතියි - நன்றி - ధన్యవాదాలు
+
+================================================================================

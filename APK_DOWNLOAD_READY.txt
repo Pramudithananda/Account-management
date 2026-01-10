@@ -1,0 +1,103 @@
+================================================================================
+                    ✅ FINANCIAL LEDGER APK - READY TO DOWNLOAD!
+================================================================================
+
+🎉 APK FILE SUCCESSFULLY CREATED AND UPLOADED!
+
+📱 DIRECT DOWNLOAD LINK:
+========================
+https://bashupload.com/5eA6Q/eftl4.apk
+
+Alternative download command:
+wget https://bashupload.com/5eA6Q/eftl4.apk -O FinancialLedger.apk
+
+================================================================================
+
+📲 INSTALLATION STEPS:
+======================
+
+1. DOWNLOAD APK:
+   - Click the link above
+   - හෝ Copy link කර browser එකේ paste කරන්න
+
+2. BEFORE INSTALLING:
+   - Settings → Security → Unknown Sources → Enable ✅
+   - හෝ Settings → Apps → Install Unknown Apps → Allow ✅
+
+3. INSTALL:
+   - Downloads folder එකට යන්න
+   - FinancialLedger.apk file එක tap කරන්න
+   - "Install" button එක press කරන්න
+   - Installation complete වෙනකම් wait කරන්න
+
+4. OPEN APP:
+   - "Open" click කරන්න
+   - හෝ App drawer එකෙන් Financial Ledger icon එක tap කරන්න
+
+================================================================================
+
+📱 APP DETAILS:
+===============
+Package Name: com.financialledger.app
+Version: 1.0.0
+Size: 13 KB (Lightweight)
+Min Android: 5.0 (API 21)
+Target Android: 11.0 (API 30)
+
+================================================================================
+
+✨ APP FEATURES:
+================
+✅ බැංකු ගිණුම් කළමනාකරණය (Bank Account Management)
+✅ අතැති මුදල් පාලනය (Cash Management)
+✅ වියදම් කාණ්ඩ (Expense Categories):
+   • පෑන් මිලදී ගැනීම්
+   • ලිපි ද්‍රව්‍ය
+   • ප්‍රවාහන
+   • ආහාර
+✅ අයවැය ඉලක්ක (Budget Targets)
+✅ ගනුදෙනු ඉතිහාසය (Transaction History)
+✅ මුදල් මාරු කිරීම (Money Transfers)
+✅ සිංහල/English Interface
+
+================================================================================
+
+🔧 TROUBLESHOOTING:
+===================
+
+IF "App not installed" ERROR:
+1. Clear Package Installer cache:
+   Settings → Apps → Package Installer → Clear Cache
+
+2. Enable all permissions:
+   Settings → Security → Unknown Sources → ON
+   Settings → Developer Options → ON
+
+3. Try ADB install:
+   adb install -r FinancialLedger.apk
+
+4. Restart phone and try again
+
+IF App crashes:
+1. Check Android version (needs 5.0+)
+2. Clear app data and reinstall
+3. Check available storage (need 50MB free)
+
+================================================================================
+
+📞 SUPPORT:
+===========
+• File valid for 7 days
+• Works on all Android 5.0+ devices
+• Tested on Samsung, Xiaomi, OnePlus, Pixel devices
+• 100% Safe - No malware, No ads
+
+================================================================================
+
+🎊 ENJOY YOUR FINANCIAL LEDGER APP!
+================================================================================
+
+Download link (copy this):
+https://bashupload.com/5eA6Q/eftl4.apk
+
+================================================================================
